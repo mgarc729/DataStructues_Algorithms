@@ -45,6 +45,36 @@ class LinkedList(object):
 
 		return newNode
 
+	def delete(self, index):
+		if self.is_empty():
+			raise IndexError("List is empty.")
+
+		if index > self.count - 1:
+			raise IndexError("Out of boundary index.")
+
+		if index == 0:
+			value = self.head.val
+			self.head = self.head.next
+			self.count -= 1
+			return value
+
+		aux = None
+		current = self.head
+		count = 0
+		while current is not None:
+			if count == index:
+				value = current.val
+				aux.next = current.next
+				self.count -= 1
+				return value
+
+			count += 1
+			aux = current
+			current = current.next
+
+	def is_empty(self):
+		return self.count == 0;
+
 	def __getitem__(self, item):
 		if item >= self.count:
 			raise IndexError("Out of range.")
@@ -183,4 +213,9 @@ if __name__ == "__main__":
 	node_2 = myList_2.insert(node)
 
 
-	print myList.intersects_n(myList_2)
+	myList.delete(0)
+
+	print myList
+	myList.delete(2)
+
+	print myList
