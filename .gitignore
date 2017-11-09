@@ -9,7 +9,7 @@
 .idea/**/tasks.xml
 .idea/dictionaries
 .DS_Store
-
+.idea/*
 # Sensitive or high-churn files:
 .idea/**/dataSources/
 .idea/**/dataSources.ids
