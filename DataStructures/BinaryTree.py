@@ -83,7 +83,7 @@ class BinaryTree(object):
 		return self.root.pre_order_traversal()
 
 	def post_order_traversal(self):
-		pass
+		return self.root.post_order_traversal()
 
 
 if __name__ == "__main__":
